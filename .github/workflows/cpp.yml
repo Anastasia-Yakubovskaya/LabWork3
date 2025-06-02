@@ -1,0 +1,28 @@
+name: C++ CI
+
+on:
+  push:
+    branches: [main, CreatingGameBranch, descriptionBranch, realisation, testingbranch]
+  pull_request:
+    branches: [main, CreatingGameBranch, descriptionBranch, realisation, testingbranch]
+jobs:  
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:    
+      - name: Checkout code      
+        uses: actions/checkout@v2
+   
+      - name: Set up GCC      
+        run: sudo apt-get install -y g++
+        
+      - name: Install Google Test      
+        run: |
+          sudo apt-get install -y libgtest-dev        
+          sudo apt-get install -y cmake 
+
+      - name: Build with Makefile      
+        run: make
+      
+      - name: Run tests
+        run: make tests

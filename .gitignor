@@ -1,0 +1,23 @@
+# Ignore object files
+*.o
+*.obj
+
+# Ignore executables
+*.exe
+*.out
+*.app
+
+# Ignore CMake build directories
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.swp
+
+# Ignore debug/release directories
+/debug/
+release/
